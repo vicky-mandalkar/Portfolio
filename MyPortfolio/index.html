@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Vicky Mandalkar - Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap"
+            rel="stylesheet"
+    />
+    <style>
+        :root {
+          --bg-color: #121212;
+          --text-color: #f0f0f0;
+          --nav-bg: #222;
+          --link-hover: #4facfe;
+          --skill-bg: #1f1f1f;
+          --skill-border: #4caf50;
+          --form-link-bg: #1f1f1f;
+          --form-link-color: #4caf50;
+          --footer-bg: #1f1f1f;
+          --footer-color: #aaa;
+        }
+
+        body.light-mode {
+          --bg-color: #f9f9f9;
+          --text-color: #121212;
+          --nav-bg: #eee;
+          --link-hover: #3a86ff;
+          --skill-bg: #ddd;
+          --skill-border: #3a86ff;
+          --form-link-bg: #eee;
+          --form-link-color: #3a86ff;
+          --footer-bg: #ddd;
+          --footer-color: #333;
+        }
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+          scroll-behavior: smooth;
+        }
+
+        body {
+          background-color: var(--bg-color);
+          color: var(--text-color);
+          line-height: 1.6;
+          animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        /* ======= NAVBAR ======= */
+        nav {
+          background-color: var(--nav-bg);
+          color: var(--text-color);
+          padding: 1rem 20px;
+          position: sticky;
+          top: 0;
+          z-index: 1000;
+          border-bottom: 4px solid;
+          border-image: linear-gradient(to right, #4facfe, #00f2fe) 1;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          max-width: 1100px;
+          margin: auto;
+        }
+
+        .logo {
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+
+        .nav-links {
+          list-style: none;
+          display: flex;
+          gap: 20px;
+        }
+
+        .nav-links a {
+          text-decoration: none;
+          color: var(--text-color);
+          transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+          color: var(--link-hover);
+        }
+
+        /* Toggle button */
+        #mode-toggle {
+          background: #4caf50;
+          border: none;
+          border-radius: 20px;
+          padding: 8px 16px;
+          color: #121212;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.3s, color 0.3s;
+        }
+
+        #mode-toggle:hover {
+          opacity: 0.8;
+        }
+
+        section {
+          padding: 3rem 2rem;
+          max-width: 1000px;
+          margin: auto;
+          animation: slideUp 1s ease-in-out;
+        }
+
+        @keyframes slideUp {
+          from {
+            transform: translateY(50px);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+
+        .skills {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 12px;
+        }
+
+        .skill {
+          background-color: var(--skill-bg);
+          border: 1px solid var(--skill-border);
+          padding: 1rem 2rem;
+          border-radius: 10px;
+          transition: transform 0.3s ease;
+        }
+
+        .skill:hover {
+          transform: scale(1.05);
+        }
+
+        .form-link {
+          text-align: center;
+          margin-top: 2rem;
+        }
+
+        .form-link a {
+          color: var(--form-link-color);
+          background: var(--form-link-bg);
+          padding: 12px 20px;
+          border-radius: 8px;
+          text-decoration: none;
+          display: inline-block;
+          box-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
+          transition: background 0.3s ease;
+        }
+
+        .form-link a:hover {
+          background: #333;
+          color: var(--form-link-color);
+        }
+
+        footer {
+          text-align: center;
+          padding: 1.5rem;
+          background-color: var(--footer-bg);
+          color: var(--footer-color);
+          margin-top: 2rem;
+        }
+
+        /* Links section styling */
+        #links {
+          max-width: 700px;
+          margin: 1rem auto;
+          text-align: center;
+        }
+
+        #links a {
+          color: var(--form-link-color);
+          margin: 0 15px;
+          font-weight: 600;
+          text-decoration: none;
+          border: 2px solid var(--form-link-color);
+          padding: 10px 20px;
+          border-radius: 8px;
+          transition: background 0.3s, color 0.3s;
+        }
+
+        #links a:hover {
+          background-color: var(--form-link-color);
+          color: var(--bg-color);
+        }
+    </style>
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav>
+    <div class="logo">Vicky</div>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="mode-toggle" aria-label="Toggle light/dark mode">Light Mode</button>
+</nav>
+
+<!-- Home Section -->
+<section id="home">
+    <h1 style="text-align:center;">Hi, I'm Vicky Mandalkar 👋</h1>
+    <p style="text-align:center;">
+        Aspiring Software Engineer | Java Developer | Web Designer
+    </p>
+</section>
+
+<!-- About Section -->
+<section id="about">
+    <h2 style="text-align:center;">About Me</h2>
+    <p style="max-width: 700px; margin: auto; text-align: center;">
+        I'm passionate about building clean and responsive web applications. Skilled
+        in Core Java, Web Technologies, and Database Systems. I enjoy problem
+        solving and constantly improving my skills.
+    </p>
+</section>
+<!-- Skills Section -->
+<section>
+    <h2 style="text-align:center;">My Skills</h2>
+    <div class="skills">
+        <a class="skill" href="https://www.geeksforgeeks.org/java/java/" target="_blank" >Java</a>
+        <a class="skill" href="https://www.geeksforgeeks.org/sql/sql-tutorial/" target="_blank">SQL</a>
+        <a class="skill" href="https://www.geeksforgeeks.org/python/python-programming-language-tutorial/" target="_blank">PYTHON</a>
+        <a class="skill" href="https://www.geeksforgeeks.org/html/html-tutorial/" target="_blank">HTML</a>
+        <a class="skill" href="https://www.geeksforgeeks.org/css/css-tutorial/" target="_blank">CSS</a>
+        <a class="skill" href="https://www.geeksforgeeks.org/javascript/javascript-tutorial/" target="_blank">JavaScript</a>
+        <a class="skill" href="https://www.geeksforgeeks.org/java/introduction-to-jdbc/" target="_blank">JDBC</a>
+        <a class="skill" href="https://www.geeksforgeeks.org/java/introduction-to-java-swing/" target="_blank">Java Swing</a>
+        <a class="skill" href="https://www.geeksforgeeks.org/sql/sql-concepts-and-queries/" target="_blank">SQL Queries</a>
+    </div>
+</section>
+
+
+<!-- Links Section: Resume, GitHub, LinkedIn -->
+<section id="links">
+    <a href="YOUR_RESUME_LINK.pdf" target="_blank">Resume</a>
+    <a href="https://github.com/vicky-mandalkar" target="_blank">GitHub</a>
+    <a href="https://linkedin.com/in/YOUR_LINKEDIN_PROFILE" target="_blank">LinkedIn</a>
+</section>
+
+<!-- Projects Section -->
+<section id="projects">
+    <h2 style="text-align:center;">Projects</h2>
+
+    <!-- College Management System Project -->
+    <div
+            style="
+        background-color: var(--skill-bg);
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 1rem auto;
+        max-width: 700px;
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+      "
+    >
+        <h3 style="color: var(--link-hover)">College Management System</h3>
+        <p>
+            A complete desktop application built using <strong>Java Swing</strong>,
+            <strong>JDBC</strong>, and <strong>MySQL</strong>. It includes features for:
+        <ul style="margin-left: 20px;">
+            <li>Login authentication</li>
+            <li>Student and faculty information management</li>
+            <li>Exam scheduling and results</li>
+            <li>Fee payment tracking</li>
+            <li>Leave request handling</li>
+            <li>Utility functions (Notepad, Calculator, etc.)</li>
+        </ul>
+        </p>
+        <p style="margin-top: 1rem;">
+            🔗
+            <a
+                    href="https://github.com/vicky-mandalkar/College-Management-System"
+                    target="_blank"
+                    style="color: #00f2fe"
+            >View on GitHub</a
+            >
+        </p>
+    </div>
+
+    <!-- Calculator Project -->
+    <div
+            style="
+        background-color: var(--skill-bg);
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 1rem auto;
+        max-width: 700px;
+        box-shadow: 0 0 10px rgba(255, 165, 0, 0.1);
+      "
+    >
+        <h3 style="color: var(--link-hover)">Calculator</h3>
+        <p>
+            A modern web calculator built with <strong>HTML</strong>,
+            <strong>CSS</strong>, and <strong>JavaScript</strong>. Features include:
+        <ul style="margin-left: 20px;">
+            <li>Basic arithmetic operations</li>
+            <li>Animated button interactions</li>
+            <li>Calculation history tracking</li>
+            <li>Dark mode design</li>
+        </ul>
+        </p>
+        <p style="margin-top: 1rem;">
+            🔗
+            <a
+                    href="https://github.com/vicky-mandalkar/CALCULATOR"
+                    target="_blank"
+                    style="color: #00f2fe"
+            >View on GitHub</a
+            >
+        </p>
+    </div>
+
+    <!-- Portfolio Web App -->
+    <div style="background-color: var(--skill-bg); padding: 1.5rem; border-radius: 10px; margin: 1rem auto; max-width: 700px; box-shadow: 0 0 10px rgba(0,255,255,0.1);">
+        <h3 style="color: #4facfe;">Portfolio Web App</h3>
+        <p>
+            A personal portfolio website to showcase skills, projects, and achievements. Built using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> with features like:
+        <ul style="margin-left: 20px;">
+            <li>Dark mode toggle</li>
+            <li>Animated sections</li>
+            <li>Responsive layout</li>
+            <li>Project showcase with GitHub links</li>
+            <li>Contact form (Google Forms)</li>
+        </ul>
+        </p>
+        <p style="margin-top: 1rem;">
+            🔗 <a href="https://github.com/vicky-mandalkar/portfolio" target="_blank" style="color:#00f2fe;">View on GitHub</a>
+        </p>
+    </div>
+
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h2 style="text-align:center;">Ask Me a Question</h2>
+
+    <div class="form-link" style="margin-bottom: 1.5rem;">
+        <!-- Replace this with your real Google Form or Formspree link -->
+        <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLScGiIlfsf0giHSTqAuYNB-TnaAOHk9FJo01D8eMKOLVGNjhhQ/viewform?usp=header"
+                target="_blank"
+        >click me....</a
+        >
+    </div>
+
+    <div style="text-align: center;">
+        <a
+                href="mailto:vickymandalkar143@gmail.com"
+                style="
+        display: inline-block;
+        padding: 12px 25px;
+        background-color: #4caf50;
+        color: #121212;
+        font-weight: 600;
+        border-radius: 8px;
+        text-decoration: none;
+        box-shadow: 0 0 10px rgba(76, 175, 80, 0.4);
+        transition: background-color 0.3s ease;
+      "
+                onmouseover="this.style.backgroundColor='#388e3c'"
+                onmouseout="this.style.backgroundColor='#4caf50'"
+        >Email Me</a
+        >
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+    <p>Created By Vicky Mandalkar.</p>
+</footer>
+
+<script>
+    const toggleBtn = document.getElementById('mode-toggle');
+    const body = document.body;
+
+    // Load saved mode from localStorage or default dark
+    const savedMode = localStorage.getItem('mode') || 'dark';
+
+    if (savedMode === 'light') {
+      body.classList.add('light-mode');
+      toggleBtn.textContent = 'Dark Mode';
+      toggleBtn.style.color = '#f9f9f9';
+      toggleBtn.style.background = '#3a86ff';
+    } else {
+      toggleBtn.textContent = 'Light Mode';
+      toggleBtn.style.color = '#121212';
+      toggleBtn.style.background = '#4caf50';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      if (body.classList.contains('light-mode')) {
+        body.classList.remove('light-mode');
+        toggleBtn.textContent = 'Light Mode';
+        toggleBtn.style.color = '#121212';
+        toggleBtn.style.background = '#4caf50';
+        localStorage.setItem('mode', 'dark');
+      } else {
+        body.classList.add('light-mode');
+        toggleBtn.textContent = 'Dark Mode';
+        toggleBtn.style.color = '#f9f9f9';
+        toggleBtn.style.background = '#3a86ff';
+        localStorage.setItem('mode', 'light');
+      }
+    });
+</script>
+</body>
+</html>
