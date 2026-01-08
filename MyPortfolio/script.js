@@ -21,10 +21,3 @@ const observer = new IntersectionObserver(entries => {
 reveals.forEach(section => {
   observer.observe(section);
 });
-
-// Simple form alert
-document.getElementById("contact-form").addEventListener("submit", function (e) {
-  e.preventDefault();
-  alert("Thank you! Your message has been sent.");
-  this.reset();
-});
